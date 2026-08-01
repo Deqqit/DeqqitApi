@@ -1,14 +1,10 @@
-using Core.Data;
 using Core.Dto.Common;
 using Core.Model;
 using Core.Model.Helper;
 using Core.Services;
 using Core.Services.Helper.Interface;
-using Core.Services.Interface;
 using Microsoft.EntityFrameworkCore;
 using Moq;
-using Test.Helper;
-using Xunit;
 
 namespace Test.Service;
 

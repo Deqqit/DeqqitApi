@@ -2,12 +2,7 @@ using Core.Data;
 using Core.Model;
 using Core.Model.Faker;
 using Core.Model.Helper;
-using Core.Services;
-using Core.Services.Helper.Interface;
-using Microsoft.EntityFrameworkCore;
-using Moq;
 using Test.Helper;
-using Xunit;
 
 namespace Test.Service;
 

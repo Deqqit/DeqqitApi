@@ -1,11 +1,7 @@
-using Core.Data;
 using Core.Dto.Common;
 using Core.Model;
 using Core.Model.Helper;
 using Core.Services;
-using Microsoft.EntityFrameworkCore;
-using Test.Helper;
-using Xunit;
 
 namespace Test.Service;
 

@@ -18,7 +18,7 @@ public class UserBotCodeController(IUserBotCodeService userBotCodeService, ICurr
 
         ResponseResult<string> result = await userBotCodeService.GenerateCode(userId);
 
-        if (result.IsSuccess) return Ok(new UserBotAuthCodeResponse(result.Value));
+        if (result.IsSuccess && result.Value != null) return Ok(new UserBotAuthCodeResponse(result.Value));
 
         return ProcessResult(result);
     }

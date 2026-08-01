@@ -14,6 +14,8 @@ public class AuthController(IAuthManager authManager) : BaseController
 {
     [AllowAnonymous]
     [HttpPost("register")]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     {
         (User _, Dictionary<string, string[]>? errors) = await authManager.Register(request);

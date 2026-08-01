@@ -21,8 +21,10 @@ public class AuthManager(
     {
         User user = new()
         {
+            Email = request.Email,
+            FirstName = request.FirstName,
+            LastName = request.LastName,
             UserName = request.UserName,
-            Email = request.Email
         };
         IdentityResult result = await userManager.CreateAsync(user, request.Password);
         return !result.Succeeded ? (user, CreateValidationProblem(result)) : (user, null);
