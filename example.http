@@ -1,0 +1,6 @@
+@baseUrl = http://localhost/api
+
+# Get User Profile
+GET {{baseUrl}}/users/123
+Authorization: Bearer token_xyz
+Accept: application/json
