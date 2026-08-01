@@ -1,16 +1,11 @@
-using Core.Data;
 using Core.Dto.Card;
 using Core.Dto.Common;
 using Core.Model;
 using Core.Model.Helper;
 using Core.Services;
-using Core.Services.Helper;
 using Core.Services.Helper.Interface;
-using Core.Services.Interface;
 using Microsoft.EntityFrameworkCore;
 using Moq;
-using Test.Helper;
-using Xunit;
 
 namespace Test.Service;
 
@@ -140,7 +135,7 @@ public class CardServiceTests(CardServiceFixture fixture) : IntegrationTestBase<
 
         // 3. Assert
         Assert.True(result.IsSuccess);
-        Assert.Equal(CardState.Review, result.Value.State); // Response mapping might use updated entity or old? 
+        Assert.Equal(CardState.Review, result.Value.State); // Response mapping might use updated entity or old?
         // CardService maps AFTER saving, so it should be new state.
 
         Context.ChangeTracker.Clear();

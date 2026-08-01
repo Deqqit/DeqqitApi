@@ -11,8 +11,7 @@ using Core.Services.Helper.Interface;
 using Core.Services.Interface;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using OpenTelemetry.Metrics;
-using OpenTelemetry.Resources;
+using Prometheus;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -101,6 +100,11 @@ WebApplication app = builder.Build();
 // ==================== Middleware Pipeline ====================
 // Database Initialization
 // app.Services.UseSeedDatabaseMiddleware();
+
+// =================== Prometheus Monitoring ===================
+app.UseHttpMetrics();
+app.MapMetrics();
+app.UseMiddleware<MonitoringMiddleware>();
 
 // Configure the HTTP request pipeline
 app.UseOpenApiConfiguration();

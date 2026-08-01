@@ -1,7 +1,6 @@
 using Core.Data;
 using Core.Model;
 using Core.Model.Faker;
-using Core.Model.Helper;
 using Test.Helper;
 
 namespace Test.Service;

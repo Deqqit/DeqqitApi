@@ -3,7 +3,6 @@ using Core.Data;
 using Core.Model;
 using Core.Model.Faker;
 using Microsoft.AspNetCore.Identity;
-using NuGet.Packaging;
 
 namespace Api.Middleware;
 
@@ -40,9 +39,9 @@ public static class SeedDatabaseMiddleware
             await context.Decks.AddRangeAsync(userDecks);
             await context.NoteTypes.AddRangeAsync(userNoteTypes);
 
-            // 🔥 ADD THIS LINE: 
+            // 🔥 ADD THIS LINE:
             // This pushes Decks/NoteTypes to the DB so their IDs become "real"
-            await context.SaveChangesAsync(); 
+            await context.SaveChangesAsync();
 
             // 3. Prepare Child Entities
             var allNotesForUser = new List<Note>();
