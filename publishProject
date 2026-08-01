@@ -11,4 +11,5 @@ dotnet publish -r \
     -p:IncludeNativeLibrariesForSelfExtract=true \
     -p:UseAppHost=true \
     -p:DebugType=None \
-    -p:DebugSymbols=false
+    -p:DebugSymbols=false \
+    -p:SatelliteResourceLanguages="en"

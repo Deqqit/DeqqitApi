@@ -1,9 +1,11 @@
 services:
   webserver:
-    build: .
+    build:
+      context: .
+      dockerfile: Containerfile
     ports:
-      - "5000:5000"
       - "5182:5182"
+      - "8080:80"
     environment:
       - ASPNETCORE_URLS=http://+:5182
       - ConnectionStrings__DefaultConnection=Host=postgresDb;Database=DB_NAME;Username=DB_USER;Password=DB_PASSWORD
@@ -11,7 +13,7 @@ services:
       - DB_PASSWORD=/run/secrets/DB_PASSWORD
       - DB_USER=/run/secrets/DB_USER
       - JWT__Secret=/run/secrets/JWT_SECRET
-      - JWT__ValidAudience=/run/secrets/AUDIENCE
+      - JWT__ValidAudience=/run/secrets/JWT_AUDIENCE
       - JWT__ValidIssuer=DeqqitAPI
     depends_on:
       - postgresDb

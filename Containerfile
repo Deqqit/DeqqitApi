@@ -8,6 +8,10 @@ RUN apt-get update && \
     libssl3 && \
     rm -rf /var/lib/apt/lists/*
 
+# # Create a user and switch to it
+# RUN useradd -m appuser
+# USER appuser
+
 # Copy the published binary from your local machine to the container
 # COPY ./Api/bin/Release/net10.0/linux-x64/publish/Api .
 COPY ./Api/bin/Release/net10.0/linux-x64/publish .
