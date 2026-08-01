@@ -1,7 +1,6 @@
 using Core.Data;
 using Microsoft.EntityFrameworkCore.Storage;
 using Test.Helper;
-using Xunit;
 
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
 

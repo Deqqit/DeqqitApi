@@ -8,6 +8,8 @@ public sealed class UserFaker : Faker<User>
     {
         RuleFor(c => c.Email, f => f.Internet.Email());
         RuleFor(c => c.UserName, f => userName ?? f.Internet.UserName());
+        RuleFor(c => c.FirstName, f => f.Name.FirstName());
+        RuleFor(c => c.LastName, f => f.Name.LastName());
         RuleFor(c => c.ProfileImageUrl, _ => "https://avatar.iran.liara.run/public");
         RuleFor(u => u.UserStreaks, () => []);
         // RuleFor(u => u.UserStreaks, f =>

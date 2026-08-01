@@ -1,7 +1,6 @@
 using Core.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Xunit;
 
 namespace Test.Helper;
 

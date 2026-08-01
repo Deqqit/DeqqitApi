@@ -1,11 +1,10 @@
-using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
 namespace Core.Model;
 
 public class User : IdentityUser
 {
-    [Required] public string ProfileImageUrl { get; set; } = "https://avatar.iran.liara.run/public";
+    public string ProfileImageUrl { get; set; } = "https://avatar.iran.liara.run/public";
     public List<UserRefreshToken> RefreshTokens { get; set; } = [];
     public List<DateOnly> UserStreaks { get; set; } = [];
     public DeckOption DeckOption { get; set; } = DeckOption.CreateDefault;
@@ -13,4 +12,6 @@ public class User : IdentityUser
     public ICollection<NoteType> NoteTypes { get; set; } = [];
     public List<UserAiProvider> AiProviders { get; set; } = [];
     public ICollection<UserBot> UserBots { get; set; } = [];
+    public required string FirstName {get; set;}
+    public required string LastName {get; set;}
 }

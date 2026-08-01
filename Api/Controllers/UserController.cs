@@ -44,6 +44,8 @@ public class UserController(IUserService userService, ICurrentUserService curren
     }
 
     [HttpGet]
+    [ProducesResponseType(typeof(UserResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Get()
     {
         string? userId = currentUserService.GetUserId();
